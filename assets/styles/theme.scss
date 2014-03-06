@@ -1,0 +1,534 @@
+$defaultColor: #ddd;
+$defaultColorText: #333;
+$defaultColorLight: lighten($defaultColor, 5%);
+$defaultColorLighter: lighten($defaultColor, 10%);
+$defaultColorLightest: lighten($defaultColor, 20%);
+$defaultColorDark: darken($defaultColor, 5%);
+$defaultColorDarker: darken($defaultColor, 10%);
+$defaultColorDarkest: darken($defaultColor, 20%);
+
+$primaryColor: #00acec;
+$primaryColorText: #fff;
+$primaryColorLight: lighten($primaryColor, 5%);
+$primaryColorLighter: lighten($primaryColor, 10%);
+$primaryColorLightest: lighten($primaryColor, 20%);
+$primaryColorDark: darken($primaryColor, 5%);
+$primaryColorDarker: darken($primaryColor, 10%);
+$primaryColorDarkest: darken($primaryColor, 20%);
+
+$successColor: #49bf67;
+$successColorText: #fff;
+$successColorLight: lighten($successColor, 5%);
+$successColorLighter: lighten($successColor, 10%);
+$successColorLightest: lighten($successColor, 20%);
+$successColorDark: darken($successColor, 5%);
+$successColorDarker: darken($successColor, 10%);
+$successColorDarkest: darken($successColor, 40%);
+
+$infoColor: #9564e2;
+$infoColorText: #fff;
+$infoColorLight: lighten($infoColor, 5%);
+$infoColorLighter: lighten($infoColor, 10%);
+$infoColorLightest: lighten($infoColor, 20%);
+$infoColorDark: darken($infoColor, 5%);
+$infoColorDarker: darken($infoColor, 10%);
+$infoColorDarkest: darken($infoColor, 40%);
+
+$warningColor: #f8a326;
+$warningColorText: #fff;
+$warningColorLight: lighten($warningColor, 5%);
+$warningColorLighter: lighten($warningColor, 10%);
+$warningColorLightest: lighten($warningColor, 20%);
+$warningColorDark: darken($warningColor, 5%);
+$warningColorDarker: darken($warningColor, 10%);
+$warningColorDarkest: darken($warningColor, 40%);
+
+$dangerColor: #ff5454;
+$dangerColorText: #fff;
+$dangerColorLight: lighten($dangerColor, 5%);
+$dangerColorLighter: lighten($dangerColor, 10%);
+$dangerColorLightest: lighten($dangerColor, 20%);
+$dangerColorDark: darken($dangerColor, 5%);
+$dangerColorDarker: darken($dangerColor, 10%);
+$dangerColorDarkest: darken($dangerColor, 40%);
+
+$stripeColor: #f3f2ef;
+$stripeTextColor: #404040;
+$stripeTextHoverColor: lighten(#404040, 30%);
+
+* {
+  box-sizing:border-box;
+}
+
+body {
+  font-size: 13px;
+}
+
+.btn-default,
+.btn-primary,
+.btn-success,
+.btn-info,
+.btn-warning,
+.btn-danger {
+  border: none;
+}
+
+.btn {
+  &:focus, &:active {
+    outline: none;
+  }
+
+  i {
+    padding-right: 5px;
+  }
+}
+
+.btn-default,
+.btn-primary,
+.btn-success,
+.btn-info,
+.btn-warning,
+.btn-danger
+{
+  -webkit-transition: 0.25s linear;
+  -moz-transition: 0.25s linear;
+  -o-transition: 0.25s linear;
+  transition: 0.25s linear;
+}
+
+.btn-default:active,
+.btn-primary:active,
+.btn-success:active,
+.btn-info:active,
+.btn-warning:active,
+.btn-danger:active,
+.btn-default.active,
+.btn-primary.active,
+.btn-success.active,
+.btn-info.active,
+.btn-warning.active,
+.btn-danger.active {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  border: none;
+}
+
+.btn-default:active,
+.btn-default.active {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.btn-default:hover,
+.btn-primary:hover,
+.btn-success:hover,
+.btn-info:hover,
+.btn-warning:hover,
+.btn-danger:hover,
+.btn-default.hover,
+.btn-primary.hover,
+.btn-success.hover,
+.btn-info.hover,
+.btn-warning.hover,
+.btn-danger.hover {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  border: none;
+}
+
+.btn-default:hover,
+.btn-default.hover {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.btn {
+  padding: 8px 40px;
+  font-size: 13px;
+  border-radius: 2px;
+}
+
+.btn-lg {
+  padding: 10px 45px;
+  font-size: 18px;
+  line-height: 1.33;
+}
+
+.btn-sm,
+.btn-xs {
+  padding: 5px 20px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.btn-xs {
+  padding: 2px 10px;
+}
+
+.btn:hover,
+.btn.hover {
+  
+}
+
+.btn-default {
+  background-color: $defaultColor;
+}
+
+.btn-default:hover,
+.btn-default.hover {
+  background-color: $defaultColorLight;
+}
+
+.btn-primary {
+  background-color: $primaryColor;
+}
+
+.btn-primary:hover,
+.btn-primary.hover {
+  background-color: $primaryColorLight;
+}
+
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active {
+  background-color: $primaryColorLighter;
+}
+
+.btn-success {
+  background-color: $successColor;
+}
+
+.btn-success:hover,
+.btn-success.hover {
+  background-color: $successColorLight;
+}
+
+.btn-success:focus,
+.btn-success.focus,
+.btn-success:active,
+.btn-success.active {
+  background-color: $successColorLighter;
+}
+
+.btn-warning {
+  background-color: $warningColor;
+}
+
+.btn-warning:hover,
+.btn-warning.hover {
+  background-color: $warningColorLight;
+}
+
+.btn-warning:focus,
+.btn-warning.focus,
+.btn-warning:active,
+.btn-warning.active {
+  background-color: $warningColorLighter;
+}
+
+.btn-danger {
+  background-color: $dangerColor;
+}
+
+.btn-danger:hover,
+.btn-danger.hover {
+  background-color: $dangerColorLight;
+}
+
+.btn-danger:focus,
+.btn-danger.focus,
+.btn-danger:active,
+.btn-danger.active {
+  background-color: $dangerColorLighter;
+}
+
+.btn-info {
+ background-color: $infoColor;
+}
+
+.btn-info:hover,
+.btn-info.hover {
+  background-color: $infoColorLight;
+}
+
+.btn-info:focus,
+.btn-info.focus,
+.btn-info:active,
+.btn-info.active {
+  background-color: $infoColorLighter;
+}
+
+.thumbnail,
+.img-thumbnail {
+  
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  
+}
+
+.navbar {
+  min-height: 60px;
+}
+
+.navbar .navbar-nav > .active > a {
+  
+}
+
+.navbar-brand {
+  line-height: 60px;
+  padding: 0px 15px;
+
+  img {
+    padding-bottom: 5px;
+  }
+
+  &:focus {
+    outline: none;
+    color: $stripeTextColor;
+  }
+}
+
+.navbar-inverse {
+  border: none;
+  background: $stripeColor;
+  border: 1px solid #ddd;
+
+  .navbar-toggle {
+    margin-top: 13px;
+    margin-bottom: 13px;
+    border: none;
+
+    .icon-bar {
+      background-color: $stripeTextColor;
+    }
+
+    &:focus, &:hover {
+      background: none;
+      outline: none;
+
+      .icon-bar {
+        background-color: $stripeTextHoverColor;
+      }
+    }
+  }
+
+}
+
+.navbar-inverse .navbar-collapse {
+  border-color: #ddd;
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+
+}
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav > li > a {
+  color: $stripeTextColor;
+
+  &:hover, &:active, &:focus {
+    color: $stripeTextColor;
+  }
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  padding: 0px;
+  margin: 20px 15px 19px 15px;
+
+  &:hover {
+    color: $stripeTextHoverColor;
+  }
+
+}
+
+.navbar-static-top,
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  border-radius: 0;
+}
+
+.alert {
+  border-radius: 2px;
+  border: none;
+}
+
+.alert-default {
+  background-color: $defaultColorLight;
+  color: $defaultColorText;
+}
+
+.alert-primary {
+  background-color: $primaryColorLight;
+  color: $primaryColorText;
+}
+
+.alert-success {
+  background-color: $successColorLight;
+  color: $successColorText;
+}
+
+.alert-info {
+  background-color: $infoColorLight;
+  color: $infoColorText;
+}
+
+.alert-warning {
+  background-color: $warningColorLight;
+  color: $warningColorText;
+}
+
+.alert-danger {
+  background-color: $dangerColorLight;
+  color: $dangerColorText;
+}
+
+.progress {
+}
+
+.progress-bar {
+}
+
+.progress-bar-success {
+}
+
+.progress-bar-info {
+}
+
+.progress-bar-warning {
+}
+
+.progress-bar-danger {
+}
+
+.list-group {
+
+}
+
+.list-group-item.active,
+.list-group-item.active:hover,
+.list-group-item.active:focus {
+
+}
+
+.panel {
+  border-radius: 2px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.panel > .panel-heading {
+  border-radius: 0;
+}
+
+.panel > .panel-heading > .panel-title {
+  font-size: 14px;
+}
+
+.panel > .panel-heading > .panel-title > i {
+  padding-right: 10px;
+}
+
+.panel-default {
+
+}
+
+.panel-default > .panel-heading {
+
+}
+
+.panel-primary {
+  border-color: $primaryColor;
+
+  &> .panel-heading {
+    color: #fff;
+    background-color: $primaryColor;
+    border-color: $primaryColor;
+  }
+}
+
+.panel-success {
+  border-color: $successColor;
+
+  &> .panel-heading {
+    color: #fff;
+    background-color: $successColor;
+    border-color: $successColor;
+  }
+}
+
+.panel-info {
+  border-color: $infoColor;
+
+  &> .panel-heading {
+    color: #fff;
+    background-color: $infoColor;
+    border-color: $infoColor;
+  }
+}
+
+.panel-warning {
+  border-color: $warningColor;
+
+  &> .panel-heading {
+    color: #fff;
+    background-color: $warningColor;
+    border-color: $warningColor;
+  }
+}
+
+.panel-danger {
+  border-color: $dangerColor;
+
+  &> .panel-heading {
+    color: #fff;
+    background-color: $dangerColor;
+    border-color: $dangerColor;
+  }
+}
+
+.well {
+
+}
+
+.form-control { 
+  border-radius: 2px;
+
+  &:focus {
+    border-color: $primaryColor;
+  }
+}
+
+label > .help-block {
+  display: inline-block;
+  margin: 0;
+  margin-left: 10px;
+}
+
+.has-error {
+  .form-control {
+    border-color: $dangerColor;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+    &:focus {
+      border-color: $dangerColorDarker;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+  }
+}
+
+.has-error .help-block, .has-error .control-label {
+  color: $dangerColor;
+}
+
+.form-control, .form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
