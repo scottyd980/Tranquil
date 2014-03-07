@@ -130,7 +130,47 @@ app.post('/api/auth/login', function(req, res) {
       username = body.username,
       password = body.password;
 
-  if(username === "a") {
+  if( username != null && password != null ) {
+
+    req.models.user.find({ username: username }).limit(1).only("id", "email", "password").run(function(err, person) {
+      
+      if( err ) {
+        res.send({
+          success: false,
+          message: 'An unexpected error occurred. Please try again later. If this error continues to occur, please contact support.'
+        });
+      } else if ( person === null ) {
+        res.send({
+          success: false,
+          message: 'Invalid username/password.'
+        });
+      } else {
+
+        console.log(person);
+
+        person.comparePassword( password, function(err, isMatch) {
+          if( err ) {
+            res.send({
+              success: false,
+              message: 'Invalid username/password.'
+            });
+          } else if ( isMatch === true ) {
+            var currentToken = jwt.encode({ username: username, user_id: person.id}, tokenSecret);
+            res.send({
+              success: true,
+              token: currentToken,
+              user: person.id
+            });
+          } else {
+            res.send({
+              success: false,
+              message: 'Invalid username/password.'
+            });
+          }
+        });
+      }
+
+    });
     res.send({
       success: true,
       auth_token: tokenSecret,
@@ -139,8 +179,9 @@ app.post('/api/auth/login', function(req, res) {
     });
   } else {
 
-    res.send(401, {
-      success: false
+    res.send({
+      success: false,
+      message: 'Username/password are required.'
     });
 
   }

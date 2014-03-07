@@ -23,19 +23,24 @@ module.exports = function (orm, db) {
     methods: {
         fullName: function () {
             return this.first_name + ' ' + this.last_name;
+        },
+
+        comparePassword: function( testPassword, callback ) {
+          console.log('test');
+          bcrypt.compare( testPassword, this.password, function(err, isMatch) {
+            if( err ) { return callback(err); }
+            console.log('password match');
+            callback( null, isMatch );
+          });
         }
     },
     hooks: {
       beforeCreate: function (next) {
-        console.log(this.password);
         if (!this.salt) {
-          console.log("salting");
           this.salt = bcrypt.genSaltSync(10);
         }
         if (this.password) {
-          console.log("hashing");
           this.password = bcrypt.hashSync(this.password, this.salt);
-          console.log(this.password);
         }
         next();
       }
