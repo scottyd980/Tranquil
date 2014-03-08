@@ -26,10 +26,8 @@ module.exports = function (orm, db) {
         },
 
         comparePassword: function( testPassword, callback ) {
-          console.log('test');
           bcrypt.compare( testPassword, this.password, function(err, isMatch) {
             if( err ) { return callback(err); }
-            console.log('password match');
             callback( null, isMatch );
           });
         }

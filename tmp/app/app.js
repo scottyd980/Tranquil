@@ -32,6 +32,10 @@ Tranquil.Auth = Em.Auth.extend({
 	},
 	authRedirectable: {
 		route: 'auth.login'
+	},
+	actionRedirectable: {
+		signInRoute: 'about',
+		signOutRoute: 'index'
 	}
 });
 

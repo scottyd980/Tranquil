@@ -135,20 +135,23 @@ app.post('/api/auth/login', function(req, res) {
     req.models.user.find({ username: username }).limit(1).only("id", "email", "password").run(function(err, person) {
       
       if( err ) {
+
         res.send({
           success: false,
           message: 'An unexpected error occurred. Please try again later. If this error continues to occur, please contact support.'
         });
+
       } else if ( person === null ) {
+
         res.send({
           success: false,
           message: 'Invalid username/password.'
         });
+
       } else {
 
-        console.log(person);
+        person[0].comparePassword( password, function(err, isMatch) {
 
-        person.comparePassword( password, function(err, isMatch) {
           if( err ) {
             res.send({
               success: false,
@@ -158,7 +161,7 @@ app.post('/api/auth/login', function(req, res) {
             var currentToken = jwt.encode({ username: username, user_id: person.id}, tokenSecret);
             res.send({
               success: true,
-              token: currentToken,
+              auth_token: currentToken,
               user: person.id
             });
           } else {
@@ -170,12 +173,6 @@ app.post('/api/auth/login', function(req, res) {
         });
       }
 
-    });
-    res.send({
-      success: true,
-      auth_token: tokenSecret,
-      remember_token: rememberToken,
-      user_id: 1
     });
   } else {
 
