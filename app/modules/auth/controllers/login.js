@@ -17,7 +17,7 @@ Tranquil.AuthLoginController = Ember.Controller.extend({
 					remember: this.get('remember')
 				}
 			}).then(function(response) {
-				console.log(response);
+				$.cookie('remember_token', response.auth_token, {expires: 365});
 			}).catch(function(response) {
 				//console.log(response);
 			});
