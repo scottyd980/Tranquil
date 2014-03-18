@@ -17,8 +17,8 @@ Tranquil.AuthLoginController = Ember.Controller.extend({
 					remember: this.get('remember')
 				}
 			}).then(function(response) {
-				//console.log(response);
-			}).fail(function(response) {
+				console.log(response);
+			}).catch(function(response) {
 				//console.log(response);
 			});
 			

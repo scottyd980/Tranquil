@@ -138,7 +138,7 @@ function program1(depth0,data) {
   hashTypes = {'on': "STRING"};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "signIn", {hash:{
     'on': ("submit")
-  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push(" role=\"form\">\n					<div class=\"form-group\">\n						<label for=\"username\">Username</label>\n						");
   hashContexts = {'value': depth0,'type': depth0,'id': depth0,'class': depth0};
   hashTypes = {'value': "ID",'type': "STRING",'id': "STRING",'class': "STRING"};

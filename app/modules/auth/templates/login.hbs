@@ -7,7 +7,7 @@
 				{{#if errorMessage}}
 					<div class="alert alert-danger">{{errorMessage}}</div>
 				{{/if}}
-				<form {{action signIn on="submit"}} role="form">
+				<form {{action "signIn" on="submit"}} role="form">
 					<div class="form-group">
 						<label for="username">Username</label>
 						{{input value=username type="text" id="username" class="form-control" }}
