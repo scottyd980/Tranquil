@@ -162,6 +162,7 @@ app.post('/api/auth/login', function(req, res) {
             res.send({
               success: true,
               auth_token: currentToken,
+              remember_token: currentToken,
               user: person.id
             });
           } else {
