@@ -42,6 +42,7 @@ Tranquil.Auth = Em.Auth.extend({
 Tranquil.AuthenticatedRoute = Ember.Route.extend({
 	authRedirectable: true,
 	beforeModel: function () {
+		//console.log(this.auth.get('module.rememberable').recall());
         this._super.apply(this, arguments);
     }
 });
